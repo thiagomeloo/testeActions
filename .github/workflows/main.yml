@@ -45,6 +45,7 @@ jobs:
       run: ./gradlew clean build
 
   publish:
+    needs: [test, build]
     name: Rollback
     if: failure()
     runs-on: ubuntu-latest
