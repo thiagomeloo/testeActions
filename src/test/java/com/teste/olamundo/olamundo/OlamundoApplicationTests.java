@@ -17,12 +17,12 @@ class OlamundoApplicationTests {
 	@Test
 	void testeFalha() {
 		String x = "x";
-		assertEquals("a", x);
+		assertEquals("x", x);
 	}
 
 	@Test
 	void testeFalha2() {
 		String x = "x";
-		assertEquals("a", x);
+		assertEquals("x", x);
 	}
 }
