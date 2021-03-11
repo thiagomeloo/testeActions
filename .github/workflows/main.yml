@@ -45,12 +45,15 @@ jobs:
       run: ./gradlew clean build
 
   publish:
-    needs: [test, build]
-    name: Rollback
-    if: failure()
+    needs: [build]
+    name: Publish
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: butlerlogic/action-autotag@stable
-      with:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - if: ${{ !failure() }}
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.0.0
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_APP_EMAIL}}
+          usedocker: true
