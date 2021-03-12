@@ -23,6 +23,6 @@ class OlamundoApplicationTests {
 	@Test
 	void testeFalha2() {
 		String x = "x";
-		assertEquals("x", x);
+		assertEquals("xa", x);
 	}
 }

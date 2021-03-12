@@ -25,7 +25,6 @@ jobs:
     - name: Run Test
       run: ./gradlew test
       
-
   build:
     name: Build
     runs-on: ubuntu-latest
