@@ -8,7 +8,7 @@ public class OlamundoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OlamundoApplication.class, args);
-		System.out.println("ola mundo");
+
 	}
 
 }
