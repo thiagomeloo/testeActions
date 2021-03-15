@@ -11,7 +11,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    needs: service
     steps:
     - uses: actions/checkout@v1
     
@@ -19,6 +18,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+
+    - name: Setup Postgres database
+      uses: Daniel-Marynicz/postgresql-action@master
+        with:
+          app_user_password: 1234
+          app_db: siscontabil
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -65,14 +70,5 @@ jobs:
           heroku_app_name: "${{secrets.HEROKU_APP_NAME}}" #Must be unique in Heroku
           heroku_email: "${{secrets.HEROKU_APP_EMAIL}}"
 
-  service:
-    name: Services
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup Postgres database
-        uses: Daniel-Marynicz/postgresql-action@master
-        with:
-          app_user_password: 1234
-          app_db: siscontabil
-          postgres_extensions: uuid-ossp ltree
+
         
