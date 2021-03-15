@@ -19,15 +19,6 @@ jobs:
       with:
         java-version: 11
 
-    - name: Setup Postgres database
-      uses: Daniel-Marynicz/postgresql-action@master
-      with:
-        postgres_image_tag: 13
-        app_user: postgres
-        app_user_password: 1234
-        app_db: siscontabil
-        postgres_extensions: uuid-ossp ltree    
-
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
@@ -45,16 +36,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    
-    - name: Setup Postgres database
-      uses: Daniel-Marynicz/postgresql-action@master
-      with:
-        postgres_image_tag: 13
-        app_user: postgres
-        app_user_password: 1234
-        app_db: siscontabil
-        postgres_extensions: uuid-ossp ltree  
-    
+  
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
