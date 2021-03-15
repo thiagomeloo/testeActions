@@ -20,7 +20,7 @@ jobs:
         java-version: 11
  
     - name: Set postgres
-    - uses: harmon758/postgresql-action@v1
+      uses: harmon758/postgresql-action@v1
       with:
         postgresql db: siscontabil
         postgresql password: 1234
@@ -44,7 +44,7 @@ jobs:
         java-version: 11
 
     - name: Set postgres
-    - uses: harmon758/postgresql-action@v1
+      uses: harmon758/postgresql-action@v1
       with:
         postgresql db: siscontabil
         postgresql password: 1234
