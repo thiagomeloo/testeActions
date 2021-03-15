@@ -18,6 +18,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+ 
+    - name: Set postgres
+    - uses: harmon758/postgresql-action@v1
+      with:
+        postgresql db: siscontabil
+        postgresql password: 1234
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -36,7 +42,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-      
+
+    - name: Set postgres
+    - uses: harmon758/postgresql-action@v1
+      with:
+        postgresql db: siscontabil
+        postgresql password: 1234
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
