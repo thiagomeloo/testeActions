@@ -23,7 +23,6 @@ jobs:
       uses: Daniel-Marynicz/postgresql-action@master
       with:
         postgres_image_tag: 12-alpine
-        app_user: postgres
         app_user_password: 1234
         app_db: siscontabil
         postgres_extensions: uuid-ossp ltree
